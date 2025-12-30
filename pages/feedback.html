@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Nexus Aquarium</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="icon" type="image/png" href="../assets/favicon-32x32.png">
+    <style>
+        :root {
+            --primary-blue: #0284c7;
+            --light-blue: #bae6fd;
+            --dark-blue: #4a7796;
+            --aqua-green: #06b6d4;
+            --gold-yellow: #f59e0b;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--light-blue) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .feedback-container {
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+        
+        .feedback-card {
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .card-header-blue {
+            background: linear-gradient(to right, var(--primary-blue), var(--aqua-green));
+            color: white;
+            padding: 35px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-header-blue::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .aquarium-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Enhanced Star Rating */
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        .star-rating input { 
+            display: none; 
+        }
+        
+        .star-rating label {
+            font-size: 40px;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+            color: var(--gold-yellow);
+            transform: scale(1.1);
+        }
+        
+        /* Rating labels */
+        .rating-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            color: #666;
+            font-size: 0.8rem;
+        }
+        
+        /* Form styling */
+        .form-control, .form-select {
+            border-radius: 12px;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--aqua-green);
+            box-shadow: 0 0 0 0.25rem rgba(6, 182, 212, 0.25);
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary-blue), var(--aqua-green));
+            border: none;
+            border-radius: 12px;
+            padding: 14px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(2, 132, 199, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.4);
+        }
+        
+        .btn-link {
+            color: var(--primary-blue) !important;
+            font-weight: 600;
+        }
+        
+        .btn-link:hover {
+            color: var(--dark-blue) !important;
+        }
+        
+        /* Additional form sections */
+        .additional-section {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--aqua-green);
+        }
+        
+        .additional-section h5 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        /* Success message */
+        .success-message {
+            background: linear-gradient(to right, #10b981, #34d399);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Custom checkboxes */
+        .form-check-input:checked {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+        
+        /* Visit date styling */
+        .date-input-wrapper {
+            position: relative;
+        }
+        
+        .date-input-wrapper i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-blue);
+            pointer-events: none;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .feedback-container {
+                padding: 10px;
+            }
+            
+            .card-header-blue {
+                padding: 25px 20px;
+            }
+            
+            .aquarium-icon {
+                font-size: 2rem;
+            }
+            
+            .star-rating label {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="feedback-container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            
+            <div class="card feedback-card">
+                <div class="card-header-blue">
+                    <div class="aquarium-icon">
+                        <i class="bi bi-water"></i>
+                    </div>
+                    <h1 class="fw-bold display-6 m-0">Nexus Aquarium</h1>
+                    <p class="lead opacity-90 m-0 mt-2">Share your underwater adventure with us!</p>
+                </div>
+                
+                <div class="card-body p-4 p-md-5">
+                    <form id="feedbackForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label">Full Name *</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Enter your full name" required>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label">Email Address *</label>
+                                <input type="email" class="form-control form-control-lg" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control form-control-lg" placeholder="Enter your phone number">
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label">Visit Date</label>
+                                <div class="date-input-wrapper">
+                                    <input type="date" class="form-control form-control-lg">
+                                    <i class="bi bi-calendar-event"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label">Purpose of Visit *</label>
+                            <select class="form-select form-select-lg" required>
+                                <option selected disabled value="">Choose purpose...</option>
+                                <option>Family Holiday / Vacation</option>
+                                <option>School Event / Educational Trip</option>
+                                <option>Research & Marine Biology</option>
+                                <option>Photography / Videography</option>
+                                <option>Date / Special Occasion</option>
+                                <option>General Interest / Curiosity</option>
+                            </select>
+                        </div>
+                        
+                        <div class="additional-section">
+                            <h5><i class="bi bi-star-fill me-2"></i>Rate Your Experience</h5>
+                            <div class="text-center">
+                                <div class="star-rating mb-2">
+                                    <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+                                    <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                                    <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                                    <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                                    <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                                </div>
+                                <div class="rating-labels">
+                                    <span>Poor</span>
+                                    <span>Fair</span>
+                                    <span>Good</span>
+                                    <span>Very Good</span>
+                                    <span>Excellent</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="additional-section">
+                            <h5><i class="bi bi-chat-left-text me-2"></i>Tell Us More</h5>
+                            <div class="mb-4">
+                                <label class="form-label">What did you enjoy the most?</label>
+                                <textarea class="form-control" rows="3" placeholder="Tell us about your favorite part of the visit..."></textarea>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">Any suggestions for improvement?</label>
+                                <textarea class="form-control" rows="3" placeholder="We appreciate your feedback to make our aquarium better..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="additional-section">
+                            <h5><i class="bi bi-check-circle me-2"></i>Additional Information</h5>
+                            <div class="mb-3">
+                                <label class="form-label">How likely are you to recommend Nexus Aquarium to others?</label>
+                                <div class="d-flex justify-content-between mt-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="recommend" id="rec1" value="1">
+                                        <label class="form-check-label" for="rec1">Very Unlikely</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="recommend" id="rec2" value="2">
+                                        <label class="form-check-label" for="rec2">Unlikely</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="recommend" id="rec3" value="3" checked>
+                                        <label class="form-check-label" for="rec3">Neutral</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="recommend" id="rec4" value="4">
+                                        <label class="form-check-label" for="rec4">Likely</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="recommend" id="rec5" value="5">
+                                        <label class="form-check-label" for="rec5">Very Likely</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Which exhibits did you visit? (Select all that apply)</label>
+                                <div class="row mt-2">
+                                    <div class="col-md-6">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="exhibit1" value="Coral Reef">
+                                            <label class="form-check-label" for="exhibit1">Coral Reef Tunnel</label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="exhibit2" value="Shark Tank">
+                                            <label class="form-check-label" for="exhibit2">Shark Tank</label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="exhibit3" value="Jellyfish">
+                                            <label class="form-check-label" for="exhibit3">Jellyfish Gallery</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="exhibit4" value="Penguin">
+                                            <label class="form-check-label" for="exhibit4">Penguin Habitat</label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="exhibit5" value="Touch Pool">
+                                            <label class="form-check-label" for="exhibit5">Touch Pool Experience</label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="exhibit6" value="Dolphin">
+                                            <label class="form-check-label" for="exhibit6">Dolphin Show</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="newsletter" checked>
+                            <label class="form-check-label" for="newsletter">
+                                Subscribe to our newsletter for updates on new exhibits and special events
+                            </label>
+                        </div>
+
+                        <div class="d-grid gap-3">
+                            <button type="submit" class="btn btn-primary btn-lg fw-bold">
+                                <i class="bi bi-send-check me-2"></i>Submit Feedback
+                            </button>
+                            <div class="text-center">
+                                <a href="../index.html" class="btn btn-link">
+                                    <i class="bi bi-arrow-left me-1"></i>Return to Homepage
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="successMsg" class="success-message mt-4 d-none">
+                <i class="bi bi-check-circle-fill success-icon"></i>
+                <h2 class="fw-bold">Thank You!</h2>
+                <p class="lead">Your feedback has been successfully submitted. We truly appreciate you taking the time to share your experience with us.</p>
+                <p>Your insights help us improve and create better experiences for all our visitors.</p>
+                <div class="mt-4">
+                    <button id="newFeedbackBtn" class="btn btn-light btn-lg me-3">
+                        <i class="bi bi-plus-circle me-2"></i>Submit Another Feedback
+                    </button>
+                    <a href="../index.html" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-house me-2"></i>Back to Home
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const feedbackForm = document.getElementById('feedbackForm');
+        const successMsg = document.getElementById('successMsg');
+        const newFeedbackBtn = document.getElementById('newFeedbackBtn');
+        
+        // Set today's date as default for visit date
+        const today = new Date();
+        const formattedDate = today.toISOString().split('T')[0];
+        const dateInput = document.querySelector('input[type="date"]');
+        if (dateInput) {
+            dateInput.value = formattedDate;
+            dateInput.max = formattedDate; // Can't select future dates
+        }
+        
+        // Form submission handler
+        feedbackForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const requiredFields = feedbackForm.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    field.classList.remove('is-invalid');
+                }
+            });
+            
+            if (!isValid) {
+                // Show validation error
+                const errorAlert = document.createElement('div');
+                errorAlert.className = 'alert alert-danger alert-dismissible fade show mt-3';
+                errorAlert.innerHTML = `
+                    <strong>Please fill in all required fields.</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                feedbackForm.prepend(errorAlert);
+                return;
+            }
+            
+            // Check if rating is selected
+            const ratingSelected = document.querySelector('input[name="rating"]:checked');
+            if (!ratingSelected) {
+                const ratingError = document.createElement('div');
+                ratingError.className = 'alert alert-warning alert-dismissible fade show mt-3';
+                ratingError.innerHTML = `
+                    <strong>Please rate your experience by selecting stars.</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                feedbackForm.prepend(ratingError);
+                return;
+            }
+            
+            // Hide form and show success message
+            feedbackForm.classList.add('d-none');
+            successMsg.classList.remove('d-none');
+            
+            // Scroll to success message
+            successMsg.scrollIntoView({ behavior: 'smooth' });
+            
+            // Log form data (in a real app, this would be sent to a server)
+            const formData = new FormData(feedbackForm);
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+            
+            // Add rating to form object
+            formObject.rating = ratingSelected.value;
+            
+            // Add checkboxes
+            const checkboxes = feedbackForm.querySelectorAll('input[type="checkbox"]:checked');
+            formObject.exhibits = Array.from(checkboxes).map(cb => cb.value);
+            
+            console.log('Form submitted with data:', formObject);
+        });
+        
+        // New feedback button handler
+        newFeedbackBtn.addEventListener('click', function() {
+            feedbackForm.classList.remove('d-none');
+            successMsg.classList.add('d-none');
+            feedbackForm.reset();
+            
+            // Reset date to today
+            if (dateInput) {
+                dateInput.value = formattedDate;
+            }
+            
+            // Scroll to top of form
+            feedbackForm.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Real-time validation for required fields
+        const requiredInputs = feedbackForm.querySelectorAll('[required]');
+        requiredInputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (!this.value.trim()) {
+                    this.classList.add('is-invalid');
+                } else {
+                    this.classList.remove('is-invalid');
+                }
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.value.trim()) {
+                    this.classList.remove('is-invalid');
+                }
+            });
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

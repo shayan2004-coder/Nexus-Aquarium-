@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aquarium - Marine Gallery</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/gallery.css" />
+    <link rel="icon" type="image/png" href="../assets/favicon-32x32.png">
+  </head>
+
+  <body>
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="../assets/1010346818-preview.mp4" type="video/mp4" />
+    </video>
+
+    <header class="main-header">
+      <div class="container header-content">
+        <a href="../index.html" class="logo-wrapper">
+          <div class="logo-img-box">
+            <img
+              src="../assets/logo.png"
+              alt="Logo"
+              onerror="this.src='https://cdn-icons-png.flaticon.com/512/2821/2821564.png'"
+            />
+          </div>
+          <div class="logo-text">AQUARIUM<span>OF SEA CREATURES</span></div>
+        </a>
+
+        <div class="hamburger" id="hamburger-btn">
+          <span></span><span></span><span></span>
+        </div>
+
+        <nav id="nav-menu">
+          <div class="close-btn" id="close-btn">&times;</div>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Animals</a></li>
+            <li><a href="event.html">Events</a></li>
+            <li><a href="ticket.html">Ticket & Prices</a></li>
+            <li><a href="contact.html">Contact-us</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="1010346818-preview.mp4" type="video/mp4" />
+    </video>
+
+    <section class="container gallery">
+      <div class="row g-4">
+        <div class="col-md-4 col-sm-6" onclick="openLightbox(this)">
+          <div class="imag-div">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1661841439995-1706237c83dc?q=80&w=870"
+            />
+            <div class="overlay">Coral Reef</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6" onclick="openLightbox(this)">
+          <div class="imag-div">
+            <img
+              src="https://earth.org/wp-content/uploads/2022/06/Untitled-1024-%C3%97-683px-17.jpg.webp"
+            />
+            <div class="overlay">Sea Turtle</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6" onclick="openLightbox(this)">
+          <div class="imag-div">
+            <img
+              src="https://images.unsplash.com/photo-1516408388733-2f8364f2e00b?q=80&w=814"
+            />
+            <div class="overlay">Tropical Fish</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6" onclick="openLightbox(this)">
+          <div class="imag-div">
+            <img
+              src="https://images.unsplash.com/photo-1560275619-4662e36fa65c?q=80&w=900"
+            />
+            <div class="overlay">Shark Fish</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6" onclick="openLightbox(this)">
+          <div class="imag-div">
+            <img
+              src="https://images.unsplash.com/photo-1607153333879-c174d265f1d2?q=80&w=871"
+            />
+            <div class="overlay">Dolphin Fish</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6" onclick="openLightbox(this)">
+          <div class="imag-div">
+            <img
+              src="https://images.unsplash.com/photo-1544552866-49ce864ff896?q=80&w=1470"
+            />
+            <div class="overlay">Whale Fish</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6" onclick="openLightbox(this)">
+          <div class="imag-div">
+            <img
+              src="https://thumbs.dreamstime.com/b/real-octupus-squid-cuttlefish-octopoda-its-natural-habitat-octupus-open-sea-giant-pacific-octopus-latin-name-309598751.jpg"
+            />
+            <div class="overlay">Octopus</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6" onclick="openLightbox(this)">
+          <div class="imag-div">
+            <img
+              src="https://cdn.pixabay.com/video/2025/10/20/311056_tiny.jpg"
+            />
+            <div class="overlay">Crab</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6" onclick="openLightbox(this)">
+          <div class="imag-div">
+            <img
+              src="https://images.stockcake.com/public/2/b/4/2b4f26f4-d3a6-46dd-9cd3-2f0c4bee1dd4_large/seahorse-underwater-grace-stockcake.jpg"
+            />
+            <div class="overlay">Sea Horse</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container my-5">
+      <div class="table-responsive shadow-lg rounded-4 overflow-hidden">
+        <table class="table table-hover table-dark align-middle mb-0">
+          <thead style="background: linear-gradient(90deg, #00bfff, #13afc1)">
+            <tr>
+              <th class="p-3">Species Name</th>
+              <th class="p-3">Habitat</th>
+              <th class="p-3">Diet</th>
+              <th class="p-3">Conservation Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td data-label="Species Name" class="p-3">
+                <i class="fa-solid fa-fish text-danger me-2"></i> Great White
+                Shark
+              </td>
+              <td data-label="Habitat">
+                <i class="fa-solid fa-water me-2 text-primary"></i> Open Ocean
+              </td>
+              <td data-label="Diet">
+                <i class="fa-solid fa-fish-fins me-2 text-light"></i> Carnivore
+              </td>
+              <td data-label="Status">
+                <span class="badge bg-danger">
+                  <i class="fa-solid fa-triangle-exclamation me-1"></i>
+                  Vulnerable
+                </span>
+              </td>
+            </tr>
+
+            <tr>
+              <td data-label="Species Name" class="p-3">
+                <i class="fa-solid fa-shrimp text-success me-2"></i> Green Sea
+                Turtle
+              </td>
+              <td data-label="Habitat">
+                <i class="fa-solid fa-clover me-2 text-success"></i> Coral Reefs
+              </td>
+              <td data-label="Diet">
+                <i class="fa-solid fa-leaf me-2 text-success"></i> Herbivore
+              </td>
+              <td data-label="Status">
+                <span class="badge bg-warning text-dark">
+                  <i class="fa-solid fa-skull-crossbones me-1"></i> Endangered
+                </span>
+              </td>
+            </tr>
+
+            <tr>
+              <td data-label="Species Name" class="p-3">
+                <i class="fa-solid fa-fish me-2 text-info"></i> Bottlenose
+                Dolphin
+              </td>
+              <td data-label="Habitat">
+                <i class="fa-solid fa-house-flood-water me-2 text-info"></i>
+                Coastal Waters
+              </td>
+              <td data-label="Diet">
+                <i class="fa-solid fa-fish-fins me-2 text-light"></i> Carnivore
+              </td>
+              <td data-label="Status">
+                <span class="badge bg-success">
+                  <i class="fa-solid fa-circle-check me-1"></i> Least Concern
+                </span>
+              </td>
+            </tr>
+
+            <tr>
+              <td data-label="Species Name" class="p-3">
+                <i class="fa-brands fa-octopus-deploy me-2 text-danger"></i>
+                Giant Pacific Octopus
+              </td>
+              <td data-label="Habitat">
+                <i class="fa-solid fa-anchor me-2 text-secondary"></i> Deep Sea
+              </td>
+              <td data-label="Diet">
+                <i class="fa-solid fa-shrimp me-2 text-warning"></i> Carnivore
+              </td>
+              <td data-label="Status">
+                <span class="badge bg-info text-dark">
+                  <i class="fa-solid fa-shield-halved me-1"></i> Stable
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="advanced-footer">
+      <div class="container">
+        <div class="footer-glass-card">
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <div class="footer-brand">
+                <div class="logo-box">
+                  <img src="../assets/logo.png" alt="Logo" />
+                  <div class="logo-glow-circle"></div>
+                </div>
+                <div class="brand-text ms-3">
+                  <h4 class="mb-0">AQUARIUM</h4>
+                  <span class="text-info">OF SEA CREATURES</span>
+                </div>
+              </div>
+              <p class="mt-3 opacity-75 small">
+                Dedicated to marine conservation and inspiring ocean explorers
+                with the beauty of the deep blue.
+              </p>
+            </div>
+
+            <div class="col-lg-2 col-6">
+              <h6 class="footer-heading">Navigate</h6>
+              <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tickets</a></li>
+                <li><a href="#">Events</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-2 col-6">
+              <h6 class="footer-heading">Explore</h6>
+              <ul class="footer-links">
+                <li><a href="#">Marine Life</a></li>
+                <li><a href="#">Conservation</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-4 text-center text-lg-end">
+              <h6 class="footer-heading">Follow Us</h6>
+              <div class="social-icons-wrap justify-content-lg-end">
+                <a href="#" class="social-item"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="social-item"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="social-item"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </div>
+              <p class="mt-4 small opacity-50">
+                © 2025 Aquarium. All Rights Reserved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div
+          class="modal-content"
+          style="background: transparent; border: none"
+        >
+          <div class="modal-body p-0 text-center">
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              style="position: absolute; right: -30px; top: -30px"
+            ></button>
+            <img
+              src=""
+              id="lightboxImg"
+              class="img-fluid"
+              style="border: 3px solid #00bfff; border-radius: 10px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // --- Hamburger Logic ---
+      const hamburger = document.getElementById("hamburger-icon");
+      const navMenu = document.getElementById("nav-menu");
+      const closeMenu = document.getElementById("close-menu");
+
+      // Hamburger open
+      hamburger.onclick = () => navMenu.classList.add("active");
+      // Close button fix
+      closeMenu.onclick = () => navMenu.classList.remove("active");
+
+      // --- Image Modal Logic ---
+      function openLightbox(element) {
+        // 1. Clicked image ka source (URL) nikalna
+        const imgSrc = element.querySelector("img").src;
+        // 2. Modal ke andar wali image ki jagah woh URL dalna
+        document.getElementById("lightboxImg").src = imgSrc;
+        // 3. Bootstrap ke zariye modal ko dikhana
+        const myModal = new bootstrap.Modal(
+          document.getElementById("lightboxModal")
+        );
+        myModal.show();
+      }
+    </script>
+  </body>
+</html>
