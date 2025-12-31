@@ -138,96 +138,7 @@
       </div>
     </section>
 
-    <section class="container my-5">
-      <div class="table-responsive shadow-lg rounded-4 overflow-hidden">
-        <table class="table table-hover table-dark align-middle mb-0">
-          <thead style="background: linear-gradient(90deg, #00bfff, #13afc1)">
-            <tr>
-              <th class="p-3">Species Name</th>
-              <th class="p-3">Habitat</th>
-              <th class="p-3">Diet</th>
-              <th class="p-3">Conservation Status</th>
-            </tr>
-          </thead>
 
-          <tbody>
-            <tr>
-              <td data-label="Species Name" class="p-3">
-                <i class="fa-solid fa-fish text-danger me-2"></i> Great White
-                Shark
-              </td>
-              <td data-label="Habitat">
-                <i class="fa-solid fa-water me-2 text-primary"></i> Open Ocean
-              </td>
-              <td data-label="Diet">
-                <i class="fa-solid fa-fish-fins me-2 text-light"></i> Carnivore
-              </td>
-              <td data-label="Status">
-                <span class="badge bg-danger">
-                  <i class="fa-solid fa-triangle-exclamation me-1"></i>
-                  Vulnerable
-                </span>
-              </td>
-            </tr>
-
-            <tr>
-              <td data-label="Species Name" class="p-3">
-                <i class="fa-solid fa-shrimp text-success me-2"></i> Green Sea
-                Turtle
-              </td>
-              <td data-label="Habitat">
-                <i class="fa-solid fa-clover me-2 text-success"></i> Coral Reefs
-              </td>
-              <td data-label="Diet">
-                <i class="fa-solid fa-leaf me-2 text-success"></i> Herbivore
-              </td>
-              <td data-label="Status">
-                <span class="badge bg-warning text-dark">
-                  <i class="fa-solid fa-skull-crossbones me-1"></i> Endangered
-                </span>
-              </td>
-            </tr>
-
-            <tr>
-              <td data-label="Species Name" class="p-3">
-                <i class="fa-solid fa-fish me-2 text-info"></i> Bottlenose
-                Dolphin
-              </td>
-              <td data-label="Habitat">
-                <i class="fa-solid fa-house-flood-water me-2 text-info"></i>
-                Coastal Waters
-              </td>
-              <td data-label="Diet">
-                <i class="fa-solid fa-fish-fins me-2 text-light"></i> Carnivore
-              </td>
-              <td data-label="Status">
-                <span class="badge bg-success">
-                  <i class="fa-solid fa-circle-check me-1"></i> Least Concern
-                </span>
-              </td>
-            </tr>
-
-            <tr>
-              <td data-label="Species Name" class="p-3">
-                <i class="fa-brands fa-octopus-deploy me-2 text-danger"></i>
-                Giant Pacific Octopus
-              </td>
-              <td data-label="Habitat">
-                <i class="fa-solid fa-anchor me-2 text-secondary"></i> Deep Sea
-              </td>
-              <td data-label="Diet">
-                <i class="fa-solid fa-shrimp me-2 text-warning"></i> Carnivore
-              </td>
-              <td data-label="Status">
-                <span class="badge bg-info text-dark">
-                  <i class="fa-solid fa-shield-halved me-1"></i> Stable
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
 
     <footer class="advanced-footer">
       <div class="container">
@@ -316,16 +227,20 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // --- Hamburger Logic ---
-      const hamburger = document.getElementById("hamburger-icon");
-      const navMenu = document.getElementById("nav-menu");
-      const closeMenu = document.getElementById("close-menu");
+// Sahi IDs ke saath update kiya gaya code
+const hamburger = document.getElementById("hamburger-btn"); // Pehle yahan icon tha
+const navMenu = document.getElementById("nav-menu");
+const closeMenu = document.getElementById("close-btn"); // Pehle yahan close-menu tha
 
-      // Hamburger open
-      hamburger.onclick = () => navMenu.classList.add("active");
-      // Close button fix
-      closeMenu.onclick = () => navMenu.classList.remove("active");
+// Hamburger open logic
+hamburger.onclick = () => {
+    navMenu.classList.add("active");
+};
 
+// Close button logic
+closeMenu.onclick = () => {
+    navMenu.classList.remove("active");
+};
       // --- Image Modal Logic ---
       function openLightbox(element) {
         // 1. Clicked image ka source (URL) nikalna

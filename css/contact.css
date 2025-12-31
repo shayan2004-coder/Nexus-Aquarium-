@@ -177,12 +177,7 @@ body {
     padding: 12px;
 }
 
-.form-control:focus {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: var(--primary);
-  color: #fff;
-  box-shadow: none;
-}
+
 
 .btn-aqua {
   background: linear-gradient(45deg, var(--primary), var(--secondary));

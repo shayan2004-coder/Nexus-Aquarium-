@@ -17,12 +17,19 @@
         }
         
         body {
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--light-blue) 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    background: #003161;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 576px) {
+    .feedback-container {
+        margin: 1rem;
+    }
+}
+
         
         .feedback-container {
             max-width: 900px;
@@ -228,6 +235,13 @@
                 font-size: 35px;
             }
         }
+        @media (max-width: 576px) {
+    .success-message .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -241,7 +255,7 @@
                     <div class="aquarium-icon">
                         <i class="bi bi-water"></i>
                     </div>
-                    <h1 class="fw-bold display-6 m-0">Nexus Aquarium</h1>
+                    <h1 class="fw-bold display-6 m-0">Aquarium of Sea Creatures</h1>
                     <p class="lead opacity-90 m-0 mt-2">Share your underwater adventure with us!</p>
                 </div>
                 
@@ -274,6 +288,20 @@
                             </div>
                         </div>
                         
+                        <div class="mb-4">
+    <label class="form-label">Country *</label>
+    <select class="form-select form-select-lg" required>
+        <option selected disabled value="">Choose Your Country...</option>
+        <option value="Pakistan">Pakistan</option>
+        <option value="USA">United States</option>
+        <option value="UK">United Kingdom</option>
+        <option value="UAE">United Arab Emirates</option>
+        <option value="Canada">Canada</option>
+        <option value="Australia">Australia</option>
+        <option value="Saudi Arabia">Saudi Arabia</option>
+    </select>
+</div>
+
                         <div class="mb-4">
                             <label class="form-label">Purpose of Visit *</label>
                             <select class="form-select form-select-lg" required>
@@ -324,7 +352,8 @@
                             <h5><i class="bi bi-check-circle me-2"></i>Additional Information</h5>
                             <div class="mb-3">
                                 <label class="form-label">How likely are you to recommend Nexus Aquarium to others?</label>
-                                <div class="d-flex justify-content-between mt-3">
+                                <div class="d-flex flex-wrap gap-2 mt-3">
+
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="recommend" id="rec1" value="1">
                                         <label class="form-check-label" for="rec1">Very Unlikely</label>

@@ -701,11 +701,11 @@ a {
 }
 
 .aqua-title {
-  font-size: 3rem;
   font-weight: 800;
   color: #ffffff;
   text-shadow: 0 4px 10px rgba(0, 191, 255, 0.3);
 }
+
 
 .aqua-wave-divider {
   width: 80px;
@@ -1188,3 +1188,42 @@ body {
     border-color: #00bfff !important;
     color: white;
   }
+
+  
+@media (max-width: 576px) {
+  table thead {
+    display: none;
+  }
+
+  table,
+  table tbody,
+  table tr,
+  table td {
+    display: block;
+    width: 100%;
+  }
+
+  table tr {
+    margin-bottom: 1rem;
+    border-radius: 16px;
+    background: #0f172a;
+    padding: 12px;
+  }
+
+  table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border: none;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    font-weight: 600;
+    color: #38bdf8;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
+}
