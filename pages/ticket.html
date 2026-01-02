@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aquarium of Sea Creatures | Elite Portal</title>
+    <title>Aquarium Elite | Premium Ticket Center</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -14,388 +14,337 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;400;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/ticket.css" />
-    <link rel="icon" type="image/png" href="../assets/favicon-32x32.png">
+<link rel="stylesheet" href="../css/ticket.css">
+<link rel="icon" type="image/png" href="../assets/favicon-32x32.png">
   </head>
-
   <body>
     <header class="main-header shadow-sm">
-      <div class="header-content container">
-        <a href="../index.html" class="logo-wrapper">
-          <div class="logo-img-box">
-            <img src="../assets/logo.png" alt="Logo" />
-          </div>
-          <div class="logo-text">AQUARIUM <span>OF SEA CREATURES</span></div>
-        </a>
+  <div class="header-content container">
+    <a href="../index.html" class="logo-wrapper">
+      <div class="logo-img-box">
+        <img src="../assets/logo.png" alt="Aquarium Logo" />
+      </div>
+      <div class="logo-text">AQUARIUM<span>OF SEA CREATURES</span></div>
+    </a>
 
-        <div class="hamburger" id="hamburger-icon">
-          <span></span><span></span><span></span>
+    <div class="hamburger" id="hamburger-icon">
+      <span></span><span></span><span></span>
+    </div>
+
+    <nav id="nav-menu">
+      <span class="close-btn" id="close-menu">x</span>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About Animals</a></li>
+        <li><a href="event.html">Events</a></li>
+        <li><a href="gallery.html">Marine Gallery</a></li>
+        <li><a href="contact.html">Contact-us</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    <section class="hero-banner">
+      <h1 class="display-4 fw-bold">
+        AQUARIUM <span style="color: var(--neon)">
+          Entry Tickets</span>
+      </h1>
+      <h2>"Get your tickets now to witness the breathtaking beauty of marine life up close!"</h2>
+    </section>
+
+   <section class="container-fluid px-5" style="margin-top: -30px; padding-bottom: 80px">
+    <div class="row g-4 justify-content-center">
+        
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="ticket-card" style="border-top: 4px solid var(--basic)">
+                <h4 style="color: var(--basic)">BASIC</h4>
+                <div class="price-tag">$15</div>
+                <ul class="detail-list">
+                    <li><i class="fas fa-check text-secondary"></i> Main Hall Entry</li>
+                    <li><i class="fas fa-check text-secondary"></i> Jellyfish Zone</li>
+                    <li><i class="fas fa-check text-secondary"></i> 1 Hour Limit</li>
+                    <li class="opacity-50"><i class="fas fa-times"></i> No Tunnel</li>
+                </ul>
+                <button class="btn-next" onclick="openBooking('BASIC')" style="background: var(--basic); color: white">SELECT</button>
+            </div>
         </div>
 
-        <nav id="nav-menu">
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="about.html">About Animals</a></li>
-            <li><a href="event.html">Events</a></li>
-            <li><a href="gallery.html">Marine Gallery</a></li>
-            <li><a href="contact.html">Contact-us</a></li>
-            <li><a href="feedback.html">Feedback</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="ticket-card" style="border-top: 4px solid var(--standard)">
+                <h4 style="color: var(--standard)">STANDARD</h4>
+                <div class="price-tag">$28</div>
+                <ul class="detail-list">
+                    <li><i class="fas fa-check text-purple"></i> Shark Tunnel</li>
+                    <li><i class="fas fa-check text-purple"></i> Ocean Tank Access</li>
+                    <li><i class="fas fa-check text-purple"></i> Mermaid Show</li>
+                    <li><i class="fas fa-check text-purple"></i> Touch Pools</li>
+                </ul>
+                <button class="btn-next" onclick="openBooking('STANDARD')" style="background: var(--standard); color: white">SELECT</button>
+            </div>
+        </div>
 
-    <header class="hero-section">
-      <div class="container">
-        <span
-          class="hero-subtitle"
-          style="
-            letter-spacing: 10px;
-            color: var(--neon);
-            text-transform: uppercase;
-          "
-          >Official Entry Terminal</span
-        >
-        <h1 class="hero-title">
-          Aquarium Of <br /><span style="color: var(--neon)"
-            >Sea Creatures</span
-          >
-        </h1>
-        <p class="mt-4 opacity-50   mx-auto" style="max-width: 600px">
-          Experience the wonders of the deep ocean with our elite entry passes.
-        </p>
-      </div>
-    </header>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="ticket-card" style="border-top: 4px solid var(--family)">
+                <h4 style="color: var(--family)">FAMILY PACK</h4>
+                <div class="price-tag">$85</div>
+                <ul class="detail-list">
+                    <li><i class="fas fa-users"></i> 2 Adults + 2 Kids</li>
+                    <li><i class="fas fa-camera"></i> 4x Souvenir Photos</li>
+                    <li><i class="fas fa-utensils"></i> Free Kid's Snacks</li>
+                    <li><i class="fas fa-bolt"></i> Priority Entry</li>
+                </ul>
+                <button class="btn-next" onclick="openBooking('FAMILY')" style="background: var(--family); color: white">SELECT</button>
+            </div>
+        </div>
 
-    <div class="modal fade" id="bookModal" tabindex="-1">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="ticket-card" style="border: 2px solid var(--neon)">
+                <h4 style="color: var(--neon)">ELITE VIP</h4>
+                <div class="price-tag">$45</div>
+                <ul class="detail-list">
+                    <li><i class="fas fa-crown"></i> Fast Pass Entrance</li>
+                    <li><i class="fas fa-vr-cardboard"></i> Unlimited VR</li>
+                    <li><i class="fas fa-couch"></i> VIP Lounge</li>
+                    <li><i class="fas fa-fish"></i> Shark Feeding</li>
+                </ul>
+                <button class="btn-next" onclick="openBooking('PREMIUM')">SELECT</button>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="ticket-card" style="border-top: 4px solid var(--premium-red)">
+                <h4 style="color: var(--premium-red)">PREMIUM</h4>
+                <div class="price-tag">$60</div>
+                <ul class="detail-list">
+                    <li><i class="fas fa-gem"></i> Full Day Access</li>
+                    <li><i class="fas fa-water"></i> Underwater Dining</li>
+                    <li><i class="fas fa-gift"></i> Exclusive Gift Box</li>
+                    <li><i class="fas fa-video"></i> 360 Movie Access</li>
+                </ul>
+                <button class="btn-next" onclick="openBooking('ULTRA')" style="background: var(--premium-red); color: white">SELECT</button>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="ticket-card" style="border-top: 4px solid var(--gold)">
+                <h4 style="color: var(--gold)">PARKING</h4>
+                <div class="price-tag">$12</div>
+                <ul class="detail-list">
+                    <li><i class="fas fa-car"></i> Indoor Secured Slot</li>
+                    <li><i class="fas fa-key"></i> Valet Service</li>
+                    <li><i class="fas fa-shield-alt"></i> CCTV Monitoring</li>
+                    <li><i class="fas fa-walking"></i> Near Entrance</li>
+                </ul>
+                <button class="btn-next" onclick="openBooking('PARKING')" style="background: var(--gold); color: black">SELECT</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <div
+      class="modal fade"
+      id="bookingModal"
+      data-bs-backdrop="static"
+      tabindex="-1"
+    >
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="text-center mb-4">
-            <h3 class="fw-900 mb-0" id="mPlanName">PLAN NAME</h3>
-            <span class="badge bg-white text-dark py-2 px-3 mt-3" id="mPlanType"
-              >TYPE</span
-            >
+        <div class="modal-content p-4">
+          <div class="text-end">
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="step-indicator d-flex justify-content-between mb-5 px-3">
+            <div class="step active w-25" id="st1"><span>Profile</span></div>
+            <div class="step w-25" id="st2"><span>Options</span></div>
+            <div class="step w-25" id="st3"><span>Payment</span></div>
           </div>
 
-          <form id="bookingForm" class="needs-validation" novalidate>
-            <div class="mb-3">
-              <input
-                type="text"
-                class="form-control p-3"
-                id="userName"
-                placeholder="FULL NAME"
-                required
-              />
-              <div class="invalid-feedback">Please enter your full name.</div>
-            </div>
-
-            <div class="mb-3">
-              <input
-                type="email"
-                class="form-control p-3"
-                id="userEmail"
-                placeholder="EMAIL ADDRESS"
-                required
-              />
-              <div class="invalid-feedback">
-                Please enter a valid email address.
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <input
-                type="tel"
-                class="form-control p-3"
-                id="userPhone"
-                placeholder="PHONE NUMBER (Digits only)"
-                pattern="[0-9]{10,15}"
-                required
-              />
-              <div class="invalid-feedback">
-                Please enter a valid phone number (10-15 digits).
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <input
-                type="date"
-                class="form-control p-3"
-                id="bookDate"
-                required
-              />
-              <div class="invalid-feedback">Please select a date.</div>
-            </div>
-
-            <div class="row g-3 mb-4" id="ticketInputs">
-              <div class="col-6">
-                <label class="small opacity-50 mb-1">ADULTS</label>
-                <input
-                  type="number"
-                  class="form-control p-3"
-                  id="adultTickets"
-                  value="1"
-                  min="1"
-                  required
-                />
-              </div>
-              <div class="col-6">
-                <label class="small opacity-50 mb-1">CHILDREN</label>
-                <input
-                  type="number"
-                  class="form-control p-3"
-                  id="childTickets"
-                  value="0"
-                  min="0"
-                  required
-                />
-              </div>
-            </div>
-
-            <button type="submit" class="btn-action btn-neon" id="mSubmitBtn">
-              CONFIRM BOOKING
+          <div id="step1" class="form-step">
+            <h3 class="text-center mb-4">Visitor Profile</h3>
+            <input
+              type="text"
+              id="fName"
+              class="form-control"
+              placeholder="Enter First Name"
+            />
+            <input
+              type="text"
+              id="lName"
+              class="form-control"
+              placeholder="Enter Last Name"
+            />
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="Enter Email Address"
+            />
+            <input
+              type="tel"
+              id="phone"
+              class="form-control"
+              placeholder="Enter Phone Number"
+            />
+            <input
+              type="text"
+              id="cnic"
+              class="form-control"
+              placeholder="Enter CNIC (42101-XXXXXXX-X)"
+            />
+            <button class="btn-next mt-3" onclick="goToStep(2)">
+              NEXT STEP
             </button>
-          </form>
+          </div>
 
-          <div id="successMsg" class="text-center mt-3 d-none">
-            <div class="alert alert-success bg-success text-white border-0">
-              <i class="fas fa-check-circle me-2"></i> Booking Successful! We
-              will contact you soon.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container mb-5">
-      <h5 class="section-heading">Entry Tickets</h5>
-      <div class="row g-5 mb-5 pb-5">
-        <div class="col-lg-4 col-md-6">
-          <div class="card-wrap">
-            <img
-              src="https://static.vecteezy.com/system/resources/previews/033/360/572/large_2x/goldfish-the-sun-water-fish-fish-tank-hd-wallpaper-ai-generated-free-photo.jpg"
-              class="card-img"
-            />
-            <div class="card-body">
-              <h3 class="fw-900 mb-4">BASIC</h3>
-              <div class="price-badge">
-                <span>Adult</span><span class="p-val">$15</span>
-              </div>
-              <div class="price-badge">
-                <span>Child</span><span class="p-val">$10</span>
-              </div>
-              <button
-                class="btn-action btn-neon"
-                data-bs-toggle="modal"
-                data-bs-target="#bookModal"
-                data-plan="BASIC"
-                data-type="Ticket"
-              >
-                Book Now
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card-wrap" style="border-color: var(--neon)">
-            <img
-              src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?q=80&w=800"
-              class="card-img"
-            />
-            <div class="card-body">
-              <h3 class="fw-900 mb-4" style="color: var(--neon)">STANDARD</h3>
-              <div class="price-badge">
-                <span>Adult</span><span class="p-val">$30</span>
-              </div>
-              <div class="price-badge">
-                <span>Child</span><span class="p-val">$20</span>
-              </div>
-              <button
-                class="btn-action btn-neon"
-                data-bs-toggle="modal"
-                data-bs-target="#bookModal"
-                data-plan="STANDARD"
-                data-type="Ticket"
-              >
-                Book Now
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card-wrap">
-            <img
-              src="https://5.imimg.com/data5/IJ/TD/MY-19422102/fish-aquarium.jpg"
-              class="card-img"
-            />
-            <div class="card-body">
-              <h3 class="fw-900 mb-4" style="color: var(--gold)">PREMIUM</h3>
-              <div class="price-badge">
-                <span>Adult</span
-                ><span class="p-val" style="color: var(--gold)">$60</span>
-              </div>
-              <div class="price-badge">
-                <span>Child</span
-                ><span class="p-val" style="color: var(--gold)">$45</span>
-              </div>
-              <button
-                class="btn-action btn-neon"
-                style="background: var(--gold)"
-                data-bs-toggle="modal"
-                data-bs-target="#bookModal"
-                data-plan="PREMIUM"
-                data-type="Ticket"
-              >
-                Book Now
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h5 class="section-heading" style="color: var(--event-purple)">
-        Private Events
-      </h5>
-      <div class="row g-5">
-        <div class="col-lg-4 col-md-6">
-          <div class="card-wrap">
-            <img
-              src="https://img4.dhresource.com/webp/m/0x0/f3/albu/km/n/20/c259ebbb-bdc1-4341-a72d-9face6a4f40f.jpg"
-              class="card-img"
-            />
-            <div class="card-body text-center">
-              <h3 class="fw-900 mb-2">BIRTHDAY</h3>
-              <p class="small opacity-50 mb-4">Small Gatherings (10 Guests)</p>
-              <div class="price-badge">
-                <span>Event Rate</span
-                ><span class="p-val" style="color: var(--event-purple)"
-                  >$250</span
-                >
-              </div>
-              <button
-                class="btn-action btn-purple"
-                data-bs-toggle="modal"
-                data-bs-target="#bookModal"
-                data-plan="BIRTHDAY EVENT"
-                data-type="Event"
-              >
-                Reserve Now
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card-wrap" style="border-color: var(--event-purple)">
-            <img
-              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800"
-              class="card-img"
-            />
-            <div class="card-body text-center">
-              <h3 class="fw-900 mb-2" style="color: var(--event-purple)">
-                CORPORATE
-              </h3>
-              <p class="small opacity-50 mb-4">Business Meetings (30 Guests)</p>
-              <div class="price-badge">
-                <span>Event Rate</span
-                ><span class="p-val" style="color: var(--event-purple)"
-                  >$800</span
-                >
-              </div>
-              <button
-                class="btn-action btn-purple"
-                data-bs-toggle="modal"
-                data-bs-target="#bookModal"
-                data-plan="CORPORATE EVENT"
-                data-type="Event"
-              >
-                Reserve Now
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card-wrap">
-            <img
-              src="https://www.aquariumofpacific.org/images/made_new/images-news-20250628-AOP_AR-1992_v2_900_q85.jpg"
-              class="card-img"
-            />
-            <div class="card-body text-center">
-              <h3 class="fw-900 mb-2" style="color: var(--gold)">GRAND GALA</h3>
-              <p class="small opacity-50 mb-4">Full Hall (Unlimited Guests)</p>
-              <div class="price-badge">
-                <span>Event Rate</span
-                ><span class="p-val" style="color: var(--gold)">$2500</span>
-              </div>
-              <button
-                class="btn-action btn-purple"
-                style="background: var(--gold); color: #000"
-                data-bs-toggle="modal"
-                data-bs-target="#bookModal"
-                data-plan="GRAND GALA EVENT"
-                data-type="Event"
-              >
-                Reserve Now
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="bookModal" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="text-center mb-4">
-            <h3 class="fw-900 mb-0" id="mPlanName">PLAN NAME</h3>
-            <span class="badge bg-white text-dark py-2 px-3 mt-3" id="mPlanType"
-              >TYPE</span
+          <div id="step2" class="form-step d-none">
+            <h3 class="text-center mb-4">Visit Options</h3>
+            <select
+              id="packageSelect"
+              class="form-select"
+              onchange="updateCalculations()"
             >
+              <option value="BASIC">Basic Entry ($15)</option>
+              <option value="STANDARD">Standard Pass ($28)</option>
+              <option value="FAMILY">Family Bundle ($85)</option>
+              <option value="PREMIUM">Elite VIP Pass ($45)</option>
+              <option value="ULTRA">Premium Ultra ($60)</option>
+              <option value="PARKING">Parking Only ($12)</option>
+            </select>
+
+            <div
+              class="qty-box d-flex justify-content-between align-items-center mt-3"
+            >
+              <span>Adults</span>
+              <div class="d-flex gap-2">
+                <button
+                  class="btn btn-outline-info btn-sm"
+                  onclick="changeQty('adult', -1)"
+                >
+                  -
+                </button>
+                <span id="adultVal">1</span>
+                <button
+                  class="btn btn-outline-info btn-sm"
+                  onclick="changeQty('adult', 1)"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+            <div
+              class="qty-box d-flex justify-content-between align-items-center"
+            >
+              <span>Children</span>
+              <div class="d-flex gap-2">
+                <button
+                  class="btn btn-outline-info btn-sm"
+                  onclick="changeQty('child', -1)"
+                >
+                  -
+                </button>
+                <span id="childVal">0</span>
+                <button
+                  class="btn btn-outline-info btn-sm"
+                  onclick="changeQty('child', 1)"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+            <div class="form-check form-switch mb-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="parkingCheck"
+                onchange="updateCalculations()"
+              />
+              <label>Add Parking (+$12)</label>
+            </div>
+
+            <h2 class="text-center my-4" style="color: var(--neon)">
+              Total: <span id="finalTotal">$0</span>
+            </h2>
+            <div class="d-flex gap-2">
+              <button
+                class="btn btn-outline-secondary w-50 py-3 text-white"
+                onclick="goToStep(1)"
+              >
+                BACK
+              </button>
+              <button class="btn-next w-50" onclick="goToStep(3)">
+                PAYMENT
+              </button>
+            </div>
           </div>
-          <form>
-            <div class="mb-3">
-              <input
-                type="text"
-                class="form-control p-3"
-                placeholder="FULL NAME"
-                required
+
+          <div id="step3" class="form-step d-none">
+            <h3 class="text-center mb-4">Secure Payment</h3>
+            <div class="text-center">
+              <img
+                id="payQR"
+                src=""
+                style="
+                  width: 140px;
+                  border: 5px solid white;
+                  border-radius: 10px;
+                "
+                class="mb-2"
               />
+              <p class="small opacity-75">Scan for Mobile Pay</p>
             </div>
-            <div class="mb-3">
-              <input
-                type="email"
-                class="form-control p-3"
-                placeholder="EMAIL ADDRESS"
-                required
-              />
-            </div>
-            <div class="row g-3 mb-4" id="ticketInputs">
+            <div class="separator">OR USE CARD</div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Card Number (XXXX XXXX XXXX XXXX)"
+            />
+            <div class="row g-2 mb-3">
               <div class="col-6">
-                <input
-                  type="number"
-                  class="form-control p-3"
-                  value="1"
-                  min="1"
-                />
+                <input type="text" class="form-control" placeholder="MM / YY" />
               </div>
               <div class="col-6">
-                <input
-                  type="number"
-                  class="form-control p-3"
-                  value="0"
-                  min="0"
-                />
+                <input type="text" class="form-control" placeholder="CVV" />
               </div>
             </div>
-            <button type="submit" class="btn-action btn-neon" id="mSubmitBtn">
-              CONFIRM BOOKING
+            <button class="btn-next" onclick="finishBooking()">
+              FINISH BOOKING
             </button>
-          </form>
+          </div>
+
+          <div id="successStep" class="form-step d-none text-center">
+            <i class="fas fa-check-circle fa-4x text-success mb-3"></i>
+            <h2>BOOKING DONE!</h2>
+            <div id="receipt-capture" class="text-start mt-4">
+              <h5 class="text-center fw-bold border-bottom pb-2">
+                AQUARIUM TICKET
+              </h5>
+              <p><strong>Name:</strong> <span id="recName"></span></p>
+              <p><strong>Plan:</strong> <span id="recPack"></span></p>
+              <p>
+                <strong>Guests:</strong> <span id="recAdults"></span>A,
+                <span id="recKids"></span>C
+              </p>
+              <h4 class="text-center mt-2">
+                Total: <span id="recTotal"></span>
+              </h4>
+            </div>
+            <button
+              class="btn btn-primary mt-4 w-100 py-3"
+              onclick="window.print()"
+            >
+              DOWNLOAD RECEIPT
+            </button>
+          </div>
         </div>
       </div>
     </div>
-    
     <footer class="advanced-footer">
       <div class="container">
         <div class="footer-glass-card">
@@ -447,9 +396,12 @@
                 <a href="#" class="social-item"
                   ><i class="fab fa-youtube"></i
                 ></a>
+                <a href="#" class="social-item"
+                  ><i class="fab fa-twitter"></i
+                ></a>
               </div>
               <p class="mt-4 small opacity-50">
-                © 2025 Aquarium. All Rights Reserved.
+                © 2025 AquaRealm. All Rights Reserved.
               </p>
             </div>
           </div>
@@ -458,91 +410,97 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      const ham = document.getElementById("hamburger-icon");
-      const menu = document.getElementById("nav-menu");
-
-      ham.addEventListener("click", () => {
-        ham.classList.toggle("active");
-        menu.classList.toggle("active");
-      });
-
-      document.querySelectorAll("#nav-menu a").forEach((link) => {
-        link.addEventListener("click", () => {
-          ham.classList.remove("active");
-          menu.classList.remove("active");
-        });
-      });
-
-      const bookModal = document.getElementById("bookModal");
-      bookModal.addEventListener("show.bs.modal", function (event) {
-        const btn = event.relatedTarget;
-        const plan = btn.getAttribute("data-plan");
-        const type = btn.getAttribute("data-type");
-        document.getElementById("mPlanName").innerText = plan;
-        document.getElementById("mPlanType").innerText = type.toUpperCase();
-        const mSubmit = document.getElementById("mSubmitBtn");
-        const mContent = document.querySelector(".modal-content");
-
-        if (type === "Ticket") {
-          mSubmit.className = "btn-action btn-neon";
-          mContent.style.borderColor = "var(--neon)";
-          document.getElementById("mPlanName").style.color = "var(--neon)";
-        } else {
-          mSubmit.className = "btn-action btn-purple";
-          mContent.style.borderColor = "var(--event-purple)";
-          document.getElementById("mPlanName").style.color =
-            "var(--event-purple)";
-        }
-      });
-
-      const bookingForm = document.getElementById("bookingForm");
-      const successMsg = document.getElementById("successMsg");
-
-      bookingForm.addEventListener(
-        "submit",
-        function (event) {
-          event.preventDefault();
-
-          if (!bookingForm.checkValidity()) {
-            event.stopPropagation();
-            bookingForm.classList.add("was-validated");
-          } else {
-            const submitBtn = document.getElementById("mSubmitBtn");
-
-            submitBtn.innerText = "PROCESSING...";
-            submitBtn.disabled = true;
-
-            setTimeout(() => {
-              bookingForm.classList.add("d-none");
-              successMsg.classList.remove("d-none");
-
-              console.log(
-                "Booking Confirmed for:",
-                document.getElementById("userName").value
-              );
-
-              setTimeout(() => {
-                const modalInstance = bootstrap.Modal.getInstance(
-                  document.getElementById("bookModal")
-                );
-                modalInstance.hide();
-
-                setTimeout(() => {
-                  bookingForm.reset();
-                  bookingForm.classList.remove("was-validated", "d-none");
-                  successMsg.classList.add("d-none");
-                  submitBtn.innerText = "CONFIRM BOOKING";
-                  submitBtn.disabled = false;
-                }, 500);
-              }, 3000);
-            }, 2000);
-          }
-        },
-        false
+      let config = { adult: 1, child: 0, total: 0 };
+      const rates = {
+        BASIC: 15,
+        STANDARD: 28,
+        FAMILY: 85,
+        PREMIUM: 45,
+        ULTRA: 60,
+        PARKING: 12,
+      };
+      const modal = new bootstrap.Modal(
+        document.getElementById("bookingModal")
       );
 
-      const today = new Date().toISOString().split("T")[0];
-      document.getElementById("bookDate").setAttribute("min", today);
+      function openBooking(pkg) {
+        document.getElementById("packageSelect").value = pkg;
+        document.getElementById("parkingCheck").checked = pkg === "PARKING";
+        updateCalculations();
+        goToStep(1);
+        modal.show();
+      }
+
+      function changeQty(type, val) {
+        if (type === "adult") config.adult = Math.max(1, config.adult + val);
+        else config.child = Math.max(0, config.child + val);
+        document.getElementById("adultVal").innerText = config.adult;
+        document.getElementById("childVal").innerText = config.child;
+        updateCalculations();
+      }
+
+      function updateCalculations() {
+        let pkg = document.getElementById("packageSelect").value;
+        let base = rates[pkg];
+        let park = document.getElementById("parkingCheck").checked ? 12 : 0;
+        let total =
+          pkg === "FAMILY" || pkg === "PARKING"
+            ? base
+            : config.adult * base + config.child * (base * 0.5);
+        config.total = total + park;
+        document.getElementById("finalTotal").innerText = "$" + config.total;
+      }
+
+      function goToStep(s) {
+        document
+          .querySelectorAll(".form-step")
+          .forEach((d) => d.classList.add("d-none"));
+        document.getElementById("step" + s).classList.remove("d-none");
+        document
+          .querySelectorAll(".step")
+          .forEach((st, i) => st.classList.toggle("active", i + 1 <= s));
+        if (s === 3)
+          document.getElementById(
+            "payQR"
+          ).src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=PAY_AQ_${config.total}`;
+      }
+
+      function finishBooking() {
+        document.getElementById("recName").innerText =
+          document.getElementById("fName").value +
+          " " +
+          document.getElementById("lName").value;
+        document.getElementById("recPack").innerText =
+          document.getElementById("packageSelect").value;
+        document.getElementById("recAdults").innerText = config.adult;
+        document.getElementById("recKids").innerText = config.child;
+        document.getElementById("recTotal").innerText = "$" + config.total;
+        document
+          .querySelectorAll(".form-step")
+          .forEach((d) => d.classList.add("d-none"));
+        document.getElementById("successStep").classList.remove("d-none");
+      }
+
+const hamburger = document.getElementById("hamburger-icon");
+const navMenu = document.getElementById("nav-menu");
+const closeMenu = document.getElementById("close-menu");
+
+
+hamburger.onclick = () => {
+  navMenu.classList.add("active");
+};
+
+
+closeMenu.onclick = () => {
+  navMenu.classList.remove("active");
+};
+
+
+document.addEventListener('click', (e) => {
+  if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+    navMenu.classList.remove("active");
+  }
+});
     </script>
   </body>
 </html>
